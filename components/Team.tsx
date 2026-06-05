@@ -21,12 +21,12 @@ const teamMembers = [
     github: '',
   },
   {
-    name: 'NITISH',
-    photo: '/member-photos/nitish.jpg',
+    name: 'NITISH KUMAR',
+    photo: '/member-photos/nitish.jpeg',
     role: 'Legal Advisor & HR Manager',
     gradient: 'linear-gradient(135deg, #1d4ed8 0%, #4f46e5 100%)',
-    email: 'nitish@example.com',
-    linkedin: 'https://linkedin.com/in/nitish',
+    email: 'nitishkumarminz@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/nitish-kumar-minz-057854240?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
     github: '',
   },
 ]

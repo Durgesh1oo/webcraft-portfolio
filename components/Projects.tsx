@@ -8,7 +8,7 @@ const projects = [
     url: 'https://positivegems.com',
     tag: 'E-Commerce',
     color: 'from-pink-500 to-rose-600',
-    icon: '💎',
+    image: '/member-photos/ecom.png',
     description: 'A premium love & gift brand website with elegant design, smooth shopping experience, and tailored product showcases.',
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     url: 'https://knightxfitness.com',
     tag: 'Fitness',
     color: 'from-gray-900 to-gray-700',
-    icon: '🏋️',
+    image: '/member-photos/gym.png',
     description: 'A bold, high-energy gym website with membership plans, trainer profiles, and class scheduling features.',
   },
 ]
@@ -62,7 +62,7 @@ export default function Projects() {
                   style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}>
                 </div>
                 <div className="relative z-10 text-center text-white">
-                  <div className="text-6xl mb-3 group-hover:scale-110 transition-transform duration-300">{project.icon}</div>
+                  <img src={project.image} alt={project.name} className="w-full h-full object-cover mb-3 group-hover:scale-110 transition-transform duration-300" />
                   <span className="bg-white/20 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-white uppercase tracking-wider">
                     {project.tag}
                   </span>
@@ -79,7 +79,7 @@ export default function Projects() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-lg">{project.icon}</span>
+                      <img src={project.image} alt={project.name} className="w-12 h-12 object-cover rounded-full" />
                       <h3 className="font-bold text-gray-900">{project.name}</h3>
                     </div>
                     <p className="text-gray-500 text-sm">{project.description}</p>

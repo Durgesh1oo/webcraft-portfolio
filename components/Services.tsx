@@ -3,49 +3,57 @@ import { useEffect, useRef } from 'react'
 
 const services = [
   {
-    icon: '💻',
+    // icon: '💻',
+    image: '/member-photos/webdev.jpg',
     title: 'Web Development',
     desc: 'Building responsive websites with custom designs, secure hosting, and efficient domain management for businesses and startups.',
     color: 'from-blue-100 to-blue-50',
   },
   {
-    icon: '🎨',
+    // icon: '🎨',
+    image: '/member-photos/uiux.jpg',
     title: 'UI/UX Design',
     desc: 'Designing visually appealing, user-centered interfaces for seamless navigation, ensuring optimal user engagement and satisfaction.',
     color: 'from-purple-100 to-purple-50',
   },
   {
-    icon: '🖌️',
+    // icon: '🖌️',
+    image: '/member-photos/webdes.jpg',
     title: 'Web Design',
     desc: 'Crafting visually stunning websites with intuitive navigation, ensuring a seamless user experience across all devices.',
     color: 'from-cyan-100 to-cyan-50',
   },
   {
-    icon: '🌐',
+    // icon: '🌐',
+    image: '/member-photos/hosting.jpg',
     title: 'Hosting Services',
     desc: 'Providing reliable hosting solutions with high uptime, security features, and scalable options for business websites.',
     color: 'from-green-100 to-green-50',
   },
   {
-    icon: '🛍️',
+    // icon: '🛍️',
+    image: '/member-photos/wordpres.png',
     title: 'WordPress & Shopify',
     desc: 'Customizing WordPress, Wix, and Shopify platforms for unique, user-friendly websites tailored to your brand.',
     color: 'from-orange-100 to-orange-50',
   },
   {
-    icon: '🔍',
+    // icon: '🔍',
+    image: '/member-photos/seo.jpg',
     title: 'SEO Optimization',
     desc: 'Optimizing website content and structure to improve visibility on search engines, driving organic traffic growth.',
     color: 'from-yellow-100 to-yellow-50',
   },
   {
-    icon: '✏️',
+    // icon: '✏️',
+    image: '/member-photos/graphic.jpg',
     title: 'Graphic Designing',
     desc: 'Creating impactful visual identities, including logos and graphics, that resonate with your brand\'s message.',
     color: 'from-pink-100 to-pink-50',
   },
   {
-    icon: '🎬',
+    // icon: '🎬',
+    image: '/member-photos/video.jpg',
     title: 'Video Editing',
     desc: 'Crafting professional videos with seamless edits, engaging effects, and captivating storytelling for impactful communication.',
     color: 'from-red-100 to-red-50',
@@ -120,7 +128,7 @@ export default function Services() {
               className="service-card reveal bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg cursor-pointer group"
               style={{ transitionDelay: `${i * 60}ms` }}>
               <div className={`w-full h-40 rounded-xl bg-gradient-to-br ${svc.color} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
-                <span className="text-5xl">{svc.icon}</span>
+                <img src={svc.image} alt={svc.title} className="w-full h-full object-cover" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">{svc.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{svc.desc}</p>

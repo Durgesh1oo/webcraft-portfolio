@@ -17,7 +17,7 @@ export default function Home() {
       <Team />
       <Projects />
       <Testimonials />
-      <Pricing />
+      {/* <Pricing /> */}
       <Footer />
       <FloatingButtons />
     </main>

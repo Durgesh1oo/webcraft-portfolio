@@ -15,14 +15,14 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="home" className="relative pt-16 lg:min-h-screen flex items-center overflow-hidden bg-white">
+    <section id="home" className="relative pt-16 min-h-screen flex items-center overflow-hidden bg-white">
       {/* Background subtle grid */}
       <div className="absolute inset-0 pointer-events-none"
         style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #e5e7eb 1px, transparent 0)', backgroundSize: '32px 32px', opacity: 0.4 }}>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 w-full" ref={heroRef}>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start py-12 lg:min-h-[calc(100vh-64px)]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start min-h-[calc(100vh-64px)] py-12">
 
           {/* ── Col 1–6: Heading + buttons ── */}
           <div className="lg:col-span-6 flex flex-col">

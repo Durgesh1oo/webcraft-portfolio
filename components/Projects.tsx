@@ -144,7 +144,7 @@ export default function Projects() {
         </div>
 
         {/* CTA strip */}
-        <div className="mt-14 reveal text-center">
+        {/* <div className="mt-14 reveal text-center">
           <div className="inline-block rounded-2xl px-10 py-8 border border-orange-100"
             style={{ background: 'linear-gradient(135deg, #fff7ed 0%, #ffffff 100%)' }}>
             <p className="text-gray-900 font-black text-xl mb-2">Ready to be our next success story?</p>
@@ -153,7 +153,17 @@ export default function Projects() {
               Start Your Gym Website ↗
             </a>
           </div>
-        </div>
+        </div> */}
+        <div className="mt-14 reveal text-center">
+          <div className="rounded-2xl px-6 md:px-10 py-8"
+            style={{ background: 'linear-gradient(135deg, #fff7ed 0%, #ffffff 100%)', border: '1px solid #fed7aa' }}>
+            <p className="font-black text-lg md:text-xl mb-2" style={{ color: '#111827' }}>Ready to be our next success story?</p>
+            <p className="text-sm mb-5" style={{ color: '#6b7280' }}>Join 15+ gym owners who trusted WebCraft to build their digital presence.</p>
+            <a href="#footer-contact" className="btn-primary">
+              Start Your Gym Website ↗
+            </a>
+        </div>  
+      </div>
 
       </div>
     </section>

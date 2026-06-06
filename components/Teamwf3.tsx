@@ -168,11 +168,8 @@ export default function Team() {
 
         {/* Why choose us bar */}
         <div className="mt-16 reveal">
-          <div className="rounded-2xl p-8"
-            style={{
-              background: 'linear-gradient(135deg, #fff7ed 0%, #ffffff 100%)',
-              border: '1px solid #fed7aa',
-            }}>
+          <div className="rounded-2xl p-8 border border-orange-100"
+            style={{ background: 'linear-gradient(135deg, #fff7ed 0%, #fff 100%)' }}>
             <p className="text-center font-bold text-sm tracking-widest uppercase mb-8" style={{ color: '#f97316' }}>
               Why Gym Owners Choose WebCraft
             </p>
@@ -190,8 +187,8 @@ export default function Team() {
                   >
                     <Icon />
                   </div>
-                  <h4 className="font-bold text-sm" style={{ color: '#111827' }}>{title}</h4>
-                  <p className="text-xs leading-relaxed" style={{ color: '#6b7280' }}>{desc}</p>
+                  <h4 className="font-bold text-gray-900 text-sm">{title}</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>

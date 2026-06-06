@@ -100,7 +100,6 @@ export default function Services() {
           <div className="reveal flex justify-center">
             <div className="w-full max-w-md h-72 rounded-2xl overflow-hidden border border-gray-100 shadow-lg relative"
               style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
-              {/* Browser bar */}
               <div className="flex items-center gap-1.5 px-4 py-3 bg-gray-900 border-b border-white/10">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
@@ -109,33 +108,8 @@ export default function Services() {
                   <span className="text-white/40 text-xs">yourgymdomain.com</span>
                 </div>
               </div>
-
-              {/* Card content — premium SVG dumbbell instead of emoji */}
               <div className="flex flex-col items-center justify-center h-full gap-3 pb-8">
-
-                {/* Dumbbell SVG — stroke-only, matches brand orange */}
-                <svg width="76" height="40" viewBox="0 0 76 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  {/* Left outer collar */}
-                  <rect x="1" y="7" width="9" height="26" rx="3.5" stroke="#f97316" strokeWidth="2" fill="rgba(249,115,22,0.1)" />
-                  {/* Left plate */}
-                  <rect x="10" y="3" width="13" height="34" rx="3" stroke="#f97316" strokeWidth="2" fill="rgba(249,115,22,0.07)" />
-                  {/* Inner shine on left plate */}
-                  <line x1="14" y1="9" x2="14" y2="31" stroke="#f97316" strokeWidth="1" strokeLinecap="round" opacity="0.35" />
-                  {/* Bar */}
-                  <rect x="23" y="16" width="30" height="8" rx="2.5" stroke="#f97316" strokeWidth="2" fill="rgba(249,115,22,0.12)" />
-                  {/* Knurl marks on bar */}
-                  <line x1="30" y1="17.5" x2="30" y2="22.5" stroke="#f97316" strokeWidth="1" opacity="0.3" />
-                  <line x1="35" y1="17.5" x2="35" y2="22.5" stroke="#f97316" strokeWidth="1" opacity="0.3" />
-                  <line x1="40" y1="17.5" x2="40" y2="22.5" stroke="#f97316" strokeWidth="1" opacity="0.3" />
-                  <line x1="45" y1="17.5" x2="45" y2="22.5" stroke="#f97316" strokeWidth="1" opacity="0.3" />
-                  {/* Right plate */}
-                  <rect x="53" y="3" width="13" height="34" rx="3" stroke="#f97316" strokeWidth="2" fill="rgba(249,115,22,0.07)" />
-                  {/* Inner shine on right plate */}
-                  <line x1="62" y1="9" x2="62" y2="31" stroke="#f97316" strokeWidth="1" strokeLinecap="round" opacity="0.35" />
-                  {/* Right outer collar */}
-                  <rect x="66" y="7" width="9" height="26" rx="3.5" stroke="#f97316" strokeWidth="2" fill="rgba(249,115,22,0.1)" />
-                </svg>
-
+                <div className="text-6xl">🏋️‍♂️</div>
                 <div className="text-center px-6">
                   <p className="text-white font-black text-lg uppercase tracking-tight">KNIGHTX FITNESS GYM</p>
                   <p className="text-orange-400 text-xs font-semibold mt-1">Premium Gym Website · Membership · Booking</p>
@@ -163,12 +137,15 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Service cards */}
+        {/* Service cards
+            Mobile: 1 column (full-width cards, image on top, text below)
+            Desktop: 4 columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {services.map((svc, i) => (
             <div key={i}
               className="service-card reveal bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg cursor-pointer group"
               style={{ transitionDelay: `${i * 60}ms` }}>
+              {/* Image — aspect ratio box so it's never clipped */}
               <div className={`w-full bg-gradient-to-br ${svc.emoji_bg} overflow-hidden`}
                 style={{ aspectRatio: '16/9' }}>
                 <img
@@ -177,6 +154,7 @@ export default function Services() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
+              {/* Text */}
               <div className="p-4 lg:p-5">
                 <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-1 leading-snug">{svc.title}</h3>
                 <p className="text-gray-500 text-xs lg:text-sm leading-relaxed">{svc.desc}</p>

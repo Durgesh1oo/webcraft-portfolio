@@ -74,8 +74,8 @@ export default function Services() {
     <section id="service" ref={sectionRef} className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Hero intro split — desktop only */}
-        <div className="hidden lg:grid grid-cols-2 gap-16 items-center mb-24">
+        {/* Hero intro split */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="reveal">
             <div className="accent-bar"></div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-6">
@@ -98,6 +98,7 @@ export default function Services() {
           </div>
 
           <div className="reveal flex justify-center">
+            {/* Gym website mockup placeholder */}
             <div className="w-full max-w-md h-72 rounded-2xl overflow-hidden border border-gray-100 shadow-lg relative"
               style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
               {/* Mock browser bar */}
@@ -139,22 +140,17 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Service cards — 2 cols on mobile, 4 on desktop */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        {/* Service cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((svc, i) => (
             <div key={i}
-              className="service-card reveal bg-white border border-gray-100 rounded-2xl p-3 lg:p-6 shadow-sm hover:shadow-lg cursor-pointer group"
+              className="service-card reveal bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg cursor-pointer group"
               style={{ transitionDelay: `${i * 60}ms` }}>
-              {/* Image container — fixed height, overflow-hidden, no flex wrapper */}
-              <div className={`w-full h-36 rounded-xl overflow-hidden bg-gradient-to-br ${svc.emoji_bg} mb-4 group-hover:scale-105 transition-transform duration-300`}>
-                <img
-                  src={svc.image}
-                  alt={svc.title}
-                  className="w-full h-full object-cover"
-                />
+              <div className={`w-full h-36 rounded-xl bg-gradient-to-br ${svc.emoji_bg} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
+                <span className="text-5xl">{svc.image && <img src={svc.image} alt={svc.title} className="w-full h-full object-cover" />}</span>
               </div>
-              <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-1 lg:mb-2 leading-snug">{svc.title}</h3>
-              <p className="text-gray-500 text-xs lg:text-sm leading-relaxed hidden sm:block">{svc.desc}</p>
+              <h3 className="text-base font-bold text-gray-900 mb-2 leading-snug">{svc.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{svc.desc}</p>
             </div>
           ))}
         </div>

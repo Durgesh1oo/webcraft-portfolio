@@ -36,7 +36,7 @@ export default function Hero() {
             {/* Eyebrow */}
             <div className="flex items-center gap-2 mb-5">
               <span className="inline-block w-8 h-0.5 bg-orange-500"></span>
-              <span className="text-orange-500 font-bold text-xs tracking-[0.2em] uppercase">Gym Web Specialists</span>
+              <span className="text-orange-500 font-bold text-xs tracking-[0.2em] uppercase">Digital Fitness Experts</span>
             </div>
 
             {/* Heading */}
@@ -207,9 +207,9 @@ function FillerCards() {
         <p className="text-gray-400 text-xs font-semibold uppercase tracking-widest mb-3">How We Work</p>
         <div className="space-y-3">
           {[
-            { step: '01', label: 'Strategy & Discovery' },
-            { step: '02', label: 'Design & Develop' },
-            { step: '03', label: 'Launch & Get Members' },
+            { step: '01', label: 'Discover & Strategize' },
+            { step: '02', label: 'Design & Build' },
+            { step: '03', label: 'Launch & Grow' },
           ].map((s, i) => (
             <div key={i} className="flex items-center gap-3">
               <span className="text-xs font-black w-6 flex-shrink-0" style={{ color: '#f97316' }}>{s.step}</span>

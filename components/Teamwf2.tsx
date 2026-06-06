@@ -44,38 +44,50 @@ function SocialIcon({ type }: { type: string }) {
   return icons[type] || null
 }
 
-// Luxury thin-ring outline icons — no fill, pure stroke, jewellery-brand aesthetic
+// Premium SVG icons — no emoji
 function DumbbellIcon() {
   return (
-    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="10.5" y="11" width="5" height="4" rx="1" stroke="#f97316" strokeWidth="1.5" />
-      <rect x="5" y="9.5" width="5.5" height="7" rx="1.75" stroke="#f97316" strokeWidth="1.5" />
-      <rect x="1.5" y="11" width="3.5" height="4" rx="1.25" stroke="#f97316" strokeWidth="1.5" />
-      <rect x="15.5" y="9.5" width="5.5" height="7" rx="1.75" stroke="#f97316" strokeWidth="1.5" />
-      <rect x="21" y="11" width="3.5" height="4" rx="1.25" stroke="#f97316" strokeWidth="1.5" />
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="13" y="13" width="4" height="4" rx="1" fill="#f97316" />
+      <rect x="6.5" y="11" width="6.5" height="8" rx="2" fill="#f97316" opacity="0.9" />
+      <rect x="3" y="12.5" width="3.5" height="5" rx="1.5" fill="#ea580c" />
+      <rect x="17" y="11" width="6.5" height="8" rx="2" fill="#f97316" opacity="0.9" />
+      <rect x="23.5" y="12.5" width="3.5" height="5" rx="1.5" fill="#ea580c" />
     </svg>
   )
 }
 
 function SearchPinIcon() {
   return (
-    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="11" cy="11" r="7" stroke="#f97316" strokeWidth="1.5" />
-      <path d="M9 11L11 13.5L15 8.5" stroke="#f97316" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <line x1="16.5" y1="16.5" x2="23.5" y2="23.5" stroke="#f97316" strokeWidth="1.8" strokeLinecap="round" />
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Magnifier ring */}
+      <circle cx="12" cy="12" r="7.5" stroke="#f97316" strokeWidth="2.2" fill="none" />
+      {/* Inner dot */}
+      <circle cx="12" cy="12" r="2.5" fill="#f97316" opacity="0.35" />
+      <circle cx="12" cy="12" r="1.2" fill="#f97316" />
+      {/* Handle */}
+      <line x1="17.8" y1="17.8" x2="25.5" y2="25.5" stroke="#ea580c" strokeWidth="2.8" strokeLinecap="round" />
+      {/* Location pin tick */}
+      <path d="M10 12 L12 14.5 L15.5 9.5" stroke="#f97316" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
     </svg>
   )
 }
 
 function LightningIcon() {
   return (
-    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bolt-grad" x1="15" y1="2" x2="15" y2="28" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#fb923c" />
+          <stop offset="1" stopColor="#c2410c" />
+        </linearGradient>
+      </defs>
       <path
-        d="M15.5 2.5L5.5 15H13L11 23.5L20.5 11H13L15.5 2.5Z"
-        stroke="#f97316"
-        strokeWidth="1.5"
+        d="M17.5 2.5L6 17H14.5L12.5 27.5L24 13H15.5L17.5 2.5Z"
+        fill="url(#bolt-grad)"
+        stroke="#ea580c"
+        strokeWidth="0.8"
         strokeLinejoin="round"
-        strokeLinecap="round"
       />
     </svg>
   )
@@ -175,14 +187,13 @@ export default function Team() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
               {whyItems.map(({ title, desc, Icon }, i) => (
-                <div key={i} className="flex flex-col items-center gap-4">
-                  {/* Thin-ring luxury badge — transparent center, single orange stroke ring */}
+                <div key={i} className="flex flex-col items-center gap-3">
+                  {/* Icon container — refined card with subtle shadow + ring */}
                   <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center"
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center"
                     style={{
-                      border: '1.5px solid #f97316',
-                      background: 'transparent',
-                      boxShadow: '0 0 0 4px rgba(249,115,22,0.07)',
+                      background: 'linear-gradient(145deg, #fff 0%, #fff7ed 100%)',
+                      boxShadow: '0 2px 12px rgba(249,115,22,0.15), 0 0 0 1.5px rgba(249,115,22,0.15)',
                     }}
                   >
                     <Icon />

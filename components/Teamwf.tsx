@@ -44,61 +44,6 @@ function SocialIcon({ type }: { type: string }) {
   return icons[type] || null
 }
 
-// Luxury thin-ring outline icons — no fill, pure stroke, jewellery-brand aesthetic
-function DumbbellIcon() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="10.5" y="11" width="5" height="4" rx="1" stroke="#f97316" strokeWidth="1.5" />
-      <rect x="5" y="9.5" width="5.5" height="7" rx="1.75" stroke="#f97316" strokeWidth="1.5" />
-      <rect x="1.5" y="11" width="3.5" height="4" rx="1.25" stroke="#f97316" strokeWidth="1.5" />
-      <rect x="15.5" y="9.5" width="5.5" height="7" rx="1.75" stroke="#f97316" strokeWidth="1.5" />
-      <rect x="21" y="11" width="3.5" height="4" rx="1.25" stroke="#f97316" strokeWidth="1.5" />
-    </svg>
-  )
-}
-
-function SearchPinIcon() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="11" cy="11" r="7" stroke="#f97316" strokeWidth="1.5" />
-      <path d="M9 11L11 13.5L15 8.5" stroke="#f97316" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <line x1="16.5" y1="16.5" x2="23.5" y2="23.5" stroke="#f97316" strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
-  )
-}
-
-function LightningIcon() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M15.5 2.5L5.5 15H13L11 23.5L20.5 11H13L15.5 2.5Z"
-        stroke="#f97316"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-      />
-    </svg>
-  )
-}
-
-const whyItems = [
-  {
-    title: 'Fitness-First Design',
-    desc: 'Every layout decision is driven by what converts gym visitors into members.',
-    Icon: DumbbellIcon,
-  },
-  {
-    title: 'Local SEO Built-In',
-    desc: 'We optimise for "gym near me" searches so members find you first, not your competition.',
-    Icon: SearchPinIcon,
-  },
-  {
-    title: 'Fast Turnaround',
-    desc: 'Your gym website goes live in days, not months — without compromising on quality.',
-    Icon: LightningIcon,
-  },
-]
-
 export default function Team() {
   const sectionRef = useRef<HTMLDivElement>(null)
 
@@ -174,21 +119,18 @@ export default function Team() {
               Why Gym Owners Choose WebCraft
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-              {whyItems.map(({ title, desc, Icon }, i) => (
-                <div key={i} className="flex flex-col items-center gap-4">
-                  {/* Thin-ring luxury badge — transparent center, single orange stroke ring */}
-                  <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center"
-                    style={{
-                      border: '1.5px solid #f97316',
-                      background: 'transparent',
-                      boxShadow: '0 0 0 4px rgba(249,115,22,0.07)',
-                    }}
-                  >
-                    <Icon />
+              {[
+                { icon: '🏋️', title: 'Fitness-First Design', desc: 'Every layout decision is driven by what converts gym visitors into members.' },
+                { icon: '🔍', title: 'Local SEO Built-In', desc: 'We optimise for "gym near me" searches so members find you first, not your competition.' },
+                { icon: '⚡', title: 'Fast Turnaround', desc: 'Your gym website goes live in days, not months — without compromising on quality.' },
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col items-center gap-3">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl"
+                    style={{ background: 'rgba(249,115,22,0.1)' }}>
+                    {item.icon}
                   </div>
-                  <h4 className="font-bold text-gray-900 text-sm">{title}</h4>
-                  <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
+                  <h4 className="font-bold text-gray-900 text-sm">{item.title}</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>

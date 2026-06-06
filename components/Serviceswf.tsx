@@ -72,7 +72,7 @@ export default function Services() {
 
   return (
     <section id="service" ref={sectionRef} className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-6">
 
         {/* Hero intro split — desktop only */}
         <div className="hidden lg:grid grid-cols-2 gap-16 items-center mb-24">
@@ -100,6 +100,7 @@ export default function Services() {
           <div className="reveal flex justify-center">
             <div className="w-full max-w-md h-72 rounded-2xl overflow-hidden border border-gray-100 shadow-lg relative"
               style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
+              {/* Mock browser bar */}
               <div className="flex items-center gap-1.5 px-4 py-3 bg-gray-900 border-b border-white/10">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
@@ -108,6 +109,7 @@ export default function Services() {
                   <span className="text-white/40 text-xs">yourgymdomain.com</span>
                 </div>
               </div>
+              {/* Mock hero area */}
               <div className="flex flex-col items-center justify-center h-full gap-3 pb-8">
                 <div className="text-6xl">🏋️‍♂️</div>
                 <div className="text-center px-6">
@@ -124,52 +126,46 @@ export default function Services() {
         </div>
 
         {/* ALL SERVICES header */}
-        <div id="service-cards" className="text-center mb-10 reveal">
+        <div id="service-cards" className="text-center mb-14 reveal">
           <div className="flex justify-center mb-3">
             <div className="accent-bar"></div>
           </div>
           <p className="font-bold text-sm tracking-widest uppercase mb-3" style={{ color: '#f97316' }}>ALL SERVICES</p>
-          <h2 className="text-2xl md:text-4xl font-black text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900">
             Everything Your Gym Website <span style={{ color: '#f97316' }}>Needs</span> to Win
           </h2>
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-sm md:text-base">
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-base">
             From bold design to local SEO, we cover every digital touchpoint that turns a gym browser into a loyal, dues-paying member.
           </p>
         </div>
 
-        {/* Service cards
-            Mobile: 1 column (full-width cards, image on top, text below)
-            Desktop: 4 columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        {/* Service cards — 2 cols on mobile, 4 on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {services.map((svc, i) => (
             <div key={i}
-              className="service-card reveal bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg cursor-pointer group"
+              className="service-card reveal bg-white border border-gray-100 rounded-2xl p-3 lg:p-6 shadow-sm hover:shadow-lg cursor-pointer group"
               style={{ transitionDelay: `${i * 60}ms` }}>
-              {/* Image — aspect ratio box so it's never clipped */}
-              <div className={`w-full bg-gradient-to-br ${svc.emoji_bg} overflow-hidden`}
-                style={{ aspectRatio: '16/9' }}>
+              {/* Image container — fixed height, overflow-hidden, no flex wrapper */}
+              <div className={`w-full h-36 rounded-xl overflow-hidden bg-gradient-to-br ${svc.emoji_bg} mb-4 group-hover:scale-105 transition-transform duration-300`}>
                 <img
                   src={svc.image}
                   alt={svc.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              {/* Text */}
-              <div className="p-4 lg:p-5">
-                <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-1 leading-snug">{svc.title}</h3>
-                <p className="text-gray-500 text-xs lg:text-sm leading-relaxed">{svc.desc}</p>
-              </div>
+              <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-1 lg:mb-2 leading-snug">{svc.title}</h3>
+              <p className="text-gray-500 text-xs lg:text-sm leading-relaxed hidden sm:block">{svc.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Stats bar */}
-        <div className="mt-16 rounded-2xl py-10 px-6 grid grid-cols-3 gap-4 reveal"
+        <div className="mt-20 rounded-2xl py-10 px-8 grid grid-cols-1 md:grid-cols-3 gap-8 reveal"
           style={{ background: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)' }}>
           {stats.map((stat, i) => (
             <div key={i} className="text-center">
-              <div className="text-3xl md:text-5xl font-black leading-none" style={{ color: '#f97316' }}>{stat.num}</div>
-              <div className="text-gray-400 text-xs md:text-sm mt-2 font-semibold">{stat.label}</div>
+              <div className="text-5xl font-black leading-none" style={{ color: '#f97316' }}>{stat.num}</div>
+              <div className="text-gray-400 text-sm mt-2 font-semibold">{stat.label}</div>
             </div>
           ))}
         </div>

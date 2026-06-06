@@ -14,15 +14,15 @@ const projects = [
     description: 'A bold, high-energy gym website with membership plans, trainer profiles, class scheduling, and a local-SEO-optimised homepage that ranks on Google.',
   },
   {
-    name: 'PositiveGems',
-    subtitle: "India's #1 Love & Gift Brand",
-    url: 'https://positivegems.com',
-    tag: 'E-Commerce',
+    name: 'WTF Gym',
+    subtitle: "Transforming Fitness Through AI & Expert Coaching",
+    url: 'https://share.google/WSpKHefjcMQExE9QK',
+    tag: 'Gym Website',
     tagColor: '#ea580c',
-    image: '/member-photos/ecom.png',
+    image: '/member-photos/gym2.png',
     browserBar: '#1a1a1a',
-    stats: ['Product Catalogue', 'Smooth Checkout', 'Mobile-First', 'Brand Design'],
-    description: 'A premium e-commerce experience with elegant product pages, seamless shopping flow, and conversion-optimised design that drives repeat purchases.',
+    stats: ['Gym Locator', 'Membership Plans', 'Transformation Stories', 'AI Fitness Coaching'],
+    description: 'A modern fitness website with gym discovery, membership management, transformation showcases, AI-assisted training programs, and a bold user experience built to maximize sign-ups and engagement.',
   },
 ]
 

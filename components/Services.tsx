@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react'
 
 const services = [
   {
-    image: '/member-photos/gym_web.jpeg',
+    image: '/member-photos/gym_web.png',
     emoji_bg: 'from-orange-100 to-orange-50',
     title: 'Gym Website Development',
     desc: 'High-performance, mobile-first websites tailored for fitness centers — membership pages, trainer bios, class schedules, and online booking built in.',
@@ -27,19 +27,19 @@ const services = [
     desc: 'Lightning-fast, secure hosting with 99.9% uptime. Your gym website stays online 24/7 so prospects can find you any time, any day.',
   },
   {
-    image: '/member-photos/mobilefirst.jpeg',
+    image: '/member-photos/mobilefirst.jpg',
     emoji_bg: 'from-orange-100 to-orange-50',
     title: 'Mobile-First Fitness Pages',
     desc: 'Fully responsive across all devices. 80% of gym visitors search on mobile — we make sure your site converts them on every screen size.',
   },
   {
-    image: '/member-photos/seo.jpeg',
+    image: '/member-photos/seo.jpg',
     emoji_bg: 'from-red-100 to-red-50',
     title: 'Local SEO for Gyms',
     desc: 'Rank #1 when locals search "gym near me." We optimize every page so your fitness center dominates Google Maps and local search results.',
   },
   {
-    image: '/member-photos/fitnessgraphic.jpeg',
+    image: '/member-photos/graphic.jpg',
     emoji_bg: 'from-yellow-100 to-yellow-50',
     title: 'Fitness Graphic Design',
     desc: 'Social media graphics, promotional banners, class posters, and marketing materials that pack a punch and grow your community online.',

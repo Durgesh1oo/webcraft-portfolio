@@ -169,7 +169,7 @@ export default function Hero() {
         </div> */}
         <div className="mt-4 w-full">
           <div className="w-full h-40 rounded-2xl overflow-hidden">
-            <img src="/member-photos/gymweb.jpg" alt="Services" className="w-full h-full object-cover" />
+            <img src="/member-photos/gymweb.png" alt="Services" className="w-full h-full object-cover" />
           </div>
         </div>
       </a>

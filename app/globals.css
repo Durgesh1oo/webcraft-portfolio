@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --primary: #f97316;
-  --primary-dark: #ea580c;
-  --dark: #0f0f0f;
+  --primary: #2563EB;
+  --primary-dark: #1d4ed8;
+  --dark: #0f172a;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,34 +21,42 @@ body {
 }
 
 /* ── DARK MODE ── */
-html.dark body { background: #0f0f0f; color: #e2e8f0; }
-html.dark .bg-white { background-color: #1a1a1a !important; }
-html.dark .bg-gray-50 { background-color: #1a1a1a !important; }
-html.dark .bg-gray-100 { background-color: #2a2a2a !important; }
+html.dark body { background: #0f172a; color: #e2e8f0; }
+
+html.dark .bg-white { background-color: #1e293b !important; }
+html.dark .bg-gray-50 { background-color: #1e293b !important; }
+html.dark .bg-gray-100 { background-color: #334155 !important; }
+
 html.dark .text-gray-900 { color: #f1f5f9 !important; }
 html.dark .text-gray-800 { color: #e2e8f0 !important; }
 html.dark .text-gray-700 { color: #cbd5e1 !important; }
 html.dark .text-gray-600 { color: #94a3b8 !important; }
 html.dark .text-gray-500 { color: #64748b !important; }
 html.dark .text-gray-400 { color: #475569 !important; }
-html.dark .border-gray-100 { border-color: #2a2a2a !important; }
-html.dark .border-gray-200 { border-color: #3a3a3a !important; }
-html.dark nav { background: rgba(15,15,15,0.97) !important; }
-html.dark .shadow-md { box-shadow: 0 4px 20px rgba(0,0,0,0.6) !important; }
-html.dark input, html.dark textarea {
-  background-color: #1a1a1a !important;
-  border-color: #2a2a2a !important;
+
+html.dark .border-gray-100 { border-color: #334155 !important; }
+html.dark .border-gray-200 { border-color: #475569 !important; }
+
+html.dark nav { background: rgba(15,23,42,0.97) !important; }
+html.dark .shadow-md { box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important; }
+
+html.dark input,
+html.dark textarea {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
   color: #e2e8f0 !important;
 }
-html.dark input::placeholder, html.dark textarea::placeholder { color: #64748b !important; }
-html.dark .service-card { background: #1a1a1a !important; border-color: #2a2a2a !important; }
+html.dark input::placeholder,
+html.dark textarea::placeholder { color: #64748b !important; }
+
+html.dark .service-card { background: #1e293b !important; border-color: #334155 !important; }
 html.dark .service-card h3 { color: #f1f5f9 !important; }
 html.dark .service-card p { color: #94a3b8 !important; }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #f97316; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #2563EB; border-radius: 3px; }
 
 /* Marquee */
 .marquee-track {
@@ -57,6 +65,7 @@ html.dark .service-card p { color: #94a3b8 !important; }
   animation: marquee 25s linear infinite;
 }
 .marquee-track:hover { animation-play-state: paused; }
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -76,9 +85,9 @@ html.dark .service-card p { color: #94a3b8 !important; }
   50% { transform: translateY(-12px); }
 }
 @keyframes pulse-ring {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(249,115,22,0.4); }
-  70% { transform: scale(1); box-shadow: 0 0 0 14px rgba(249,115,22,0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(249,115,22,0); }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37,99,235,0.4); }
+  70% { transform: scale(1); box-shadow: 0 0 0 14px rgba(37,99,235,0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37,99,235,0); }
 }
 
 .animate-fade-up { animation: fadeUp 0.7s ease forwards; }
@@ -94,13 +103,14 @@ html.dark .service-card p { color: #94a3b8 !important; }
 .service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(249,115,22,0.15);
+  box-shadow: 0 20px 40px rgba(37,99,235,0.15);
 }
 
 /* Team card */
 .team-card { position: relative; overflow: hidden; border-radius: 16px; }
+.team-card .social-icons { transition: opacity 0.3s ease; }
 
-/* Social icon */
+/* Social icon hover fill */
 .social-icon {
   width: 40px; height: 40px;
   border-radius: 50%;
@@ -111,35 +121,36 @@ html.dark .service-card p { color: #94a3b8 !important; }
   cursor: pointer;
 }
 .social-icon:hover { transform: scale(1.15); }
+.social-icon.youtube:hover { background: #FF0000; border-color: #FF0000; }
 .social-icon.linkedin:hover { background: #0A66C2; border-color: #0A66C2; }
 .social-icon.github:hover { background: #333; border-color: #333; }
+.social-icon.instagram:hover { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-color: #cc2366; }
 
 /* Nav link hover */
 .nav-link { position: relative; }
 .nav-link::after {
   content: ''; position: absolute; bottom: -4px; left: 0;
-  width: 0; height: 2px; background: #f97316;
+  width: 0; height: 2px; background: #2563EB;
   transition: width 0.3s ease;
 }
 .nav-link:hover::after { width: 100%; }
 
 /* CTA button */
 .btn-primary {
-  background: #f97316; color: white; border-radius: 50px;
-  padding: 12px 28px; font-weight: 700;
+  background: #2563EB; color: white; border-radius: 50px;
+  padding: 12px 28px; font-weight: 600;
   display: inline-flex; align-items: center; gap: 8px;
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   cursor: pointer; border: none; text-decoration: none;
-  letter-spacing: 0.02em;
 }
 .btn-primary:hover {
-  background: #ea580c; transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(249,115,22,0.45);
+  background: #1d4ed8; transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37,99,235,0.4);
 }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #f97316, #ef4444);
+  background: linear-gradient(135deg, #2563EB, #7c3aed);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 
@@ -152,12 +163,3 @@ html.dark .service-card p { color: #94a3b8 !important; }
   text-decoration: none;
 }
 .float-btn:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-
-/* Orange accent line decoration */
-.accent-bar {
-  display: inline-block;
-  width: 48px; height: 4px;
-  background: #f97316;
-  border-radius: 2px;
-  margin-bottom: 12px;
-}

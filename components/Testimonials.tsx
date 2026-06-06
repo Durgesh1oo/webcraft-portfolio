@@ -2,44 +2,36 @@
 
 const testimonials = [
   {
-    name: 'Rohit Verma',
-    gym: 'IronCore Fitness, Noida',
-    text: 'WebCraft built us a site that actually brings in members. Within 3 weeks of launch we started getting direct calls from Google. Exactly what our gym needed — professional, fast, and built for results.',
+    name: 'Priyanshu Nagar',
+    text: 'WebCraft transformed my startup\'s online presence with their exceptional web development skills. The team was responsive, creative, and professional. Highly recommend their services to any growing business!',
   },
   {
-    name: 'Ankit Sharma',
-    gym: 'PowerHouse Gym, Delhi',
-    text: 'They completely understood the fitness industry. Our new website has a class schedule, trainer pages, and membership pricing that looks stunning on mobile. Membership inquiries doubled!',
-  },
-  {
-    name: 'Priya Kapoor',
-    gym: 'FitZone Women\'s Fitness, Gurgaon',
-    text: 'Exceptional work. The team captured our gym\'s energy in the design. We now rank on Google Maps for "women\'s gym near me" — something we struggled with for years. Highly recommend WebCraft.',
-  },
-  {
-    name: 'Suresh Bhatia',
-    gym: 'TitanFit CrossFit Studio',
-    text: 'Our old website was embarrassing. WebCraft built us something we are genuinely proud to show clients. The booking integration and membership page alone paid for the website in the first month.',
-  },
-  {
-    name: 'Karan Malhotra',
-    gym: 'Elite Strength Academy, Mumbai',
-    text: 'WebCraft are specialists — they know what gym owners need. The SEO work they did means we get organic leads every week without spending on ads. Best investment we made for our fitness centre.',
-  },
-  {
-    name: 'Deepak Nair',
-    gym: 'GymPro Fitness, Bangalore',
-    text: 'Professional, quick, and gym-savvy. They delivered our full website in 10 days with trainer profiles, gallery, and a WhatsApp inquiry button. Our walk-ins increased by 40% in two months.',
+    name: 'Manav Tandon',
+    text: 'Exceptional graphic design services! The team is incredibly talented and responsive, producing visually striking and impactful designs. Their creativity and attention to detail exceeded our expectations. Highly recommended!',
   },
   {
     name: 'Yash Rajwaniya',
-    gym: 'PeakForm Athletics',
-    text: 'Fantastic experience. The designs are energetic, on-brand, and the mobile experience is flawless. They really know how to make a gym look world-class online. Clients always compliment our site.',
+    text: 'Fantastic experience working with this team! Their nature-inspired designs are breathtaking, and they excel in client communication. They are responsive, attentive, and committed to delivering exceptional results.',
   },
   {
     name: 'Varun Singh',
-    gym: 'KnightX Fitness Gym, Delhi',
-    text: "WebCraft's creativity and execution are unparalleled. They built our entire digital presence — website, SEO, branding. The team's dedication and attention to gym-specific detail is truly impressive.",
+    text: "WebCraft's creativity and execution are unparalleled. They brought our vision to life flawlessly with their web development services. The team's innovative approach and dedication are superb. Highly satisfied!",
+  },
+  {
+    name: 'Kshitiz Kaushik',
+    text: "Top-notch development from WebCraft! Their expertise significantly boosted our website's performance and aesthetics. The team's technical proficiency and attention to detail are truly impressive. Outstanding experience!",
+  },
+  {
+    name: 'Santosh Kumar',
+    text: 'Efficient, reliable, and professional web development services by WebCraft. They made our website shine with their expert skills. The team\'s commitment to quality is evident in every detail. Best service around!',
+  },
+  {
+    name: 'Anvii',
+    text: 'Excellent client service and impressive designs! The team is attentive, responsive, and truly captures the beauty in their work. Their dedication to client satisfaction is commendable. Highly recommended!',
+  },
+  {
+    name: 'Kapil Dave',
+    text: 'Outstanding service! They created a beautiful graphic design tailored to our needs. Professional, timely, and attentive to detail. Highly impressed with their creativity and technical expertise. Definitely recommend them!',
   },
 ]
 
@@ -48,22 +40,20 @@ export default function Testimonials() {
   const row2 = testimonials.slice(4, 8)
 
   return (
-    <section id="testimonials" className="py-24 overflow-hidden" style={{ background: '#0f0f0f' }}>
+    /* id="testimonials" so "Reviews" button in Hero scrolls here */
+    <section id="testimonials" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
-          <div className="flex justify-center mb-2">
-            <div className="accent-bar"></div>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-black text-white">
-            Gym Owners Love <span style={{ color: '#f97316' }}>What We Build</span>
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900">
+            Hear From Our <span className="text-primary">Clients</span>
           </h2>
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm">
-            Real feedback from fitness business owners who trusted WebCraft to take their gym digital.
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Discover what our satisfied clients have to say about their experiences with us.
           </p>
         </div>
       </div>
 
-      {/* Row 1 — left to right */}
+      {/* Scrolling row 1 — left to right */}
       <div className="mb-4 overflow-hidden">
         <div className="marquee-track">
           {[...row1, ...row1].map((t, i) => (
@@ -72,7 +62,7 @@ export default function Testimonials() {
         </div>
       </div>
 
-      {/* Row 2 — right to left */}
+      {/* Scrolling row 2 — right to left */}
       <div className="overflow-hidden">
         <div className="marquee-track" style={{ animationDirection: 'reverse' }}>
           {[...row2, ...row2].map((t, i) => (
@@ -84,25 +74,21 @@ export default function Testimonials() {
   )
 }
 
-function TestimonialCard({ name, gym, text }: { name: string; gym: string; text: string }) {
+function TestimonialCard({ name, text }: { name: string; text: string }) {
   return (
-    <div className="flex-shrink-0 w-80 rounded-2xl p-6 mx-3 border"
-      style={{ background: '#1a1a1a', borderColor: '#2a2a2a' }}>
-      {/* Stars */}
-      <div className="flex gap-0.5 mb-3">
-        {[...Array(5)].map((_, i) => (
-          <span key={i} className="text-sm" style={{ color: '#f97316' }}>★</span>
-        ))}
-      </div>
-      <p className="text-gray-300 text-sm leading-relaxed mb-5 line-clamp-4">{text}</p>
+    <div className="flex-shrink-0 w-80 bg-white border border-gray-100 rounded-2xl p-6 mx-3 shadow-sm">
+      <p className="text-gray-600 text-sm leading-relaxed mb-5 line-clamp-4">{text}</p>
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
-          style={{ background: 'linear-gradient(135deg, #f97316, #ea580c)' }}>
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
           {name.charAt(0)}
         </div>
         <div>
-          <p className="font-bold text-white text-sm">{name}</p>
-          <p className="text-xs" style={{ color: '#f97316' }}>{gym}</p>
+          <p className="font-semibold text-gray-800 text-sm">{name}</p>
+          <div className="flex gap-0.5 mt-0.5">
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className="text-yellow-400 text-xs">★</span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
